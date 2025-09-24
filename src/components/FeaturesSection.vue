@@ -5,11 +5,10 @@
       <div class="section-header">
         <div class="section-badge">POWERFUL CAPABILITIES</div>
         <h2 class="section-title gradient-text-cyan">
-          Enterprise-Grade Features
+          Enterprise Features
         </h2>
-        <p class="section-description body-large">
-          Advanced AI capabilities designed specifically for hypervisor memory management 
-          and optimization at scale.
+        <p class="section-description body-large text-overflow-fix">
+          AI-powered memory management for hypervisor infrastructure at scale.
         </p>
       </div>
 
@@ -24,13 +23,13 @@
           </div>
           
           <div class="feature-content">
-            <h3 class="feature-title">{{ feature.title }}</h3>
-            <p class="feature-description">{{ feature.description }}</p>
+            <h3 class="feature-title text-overflow-fix">{{ feature.title }}</h3>
+            <p class="feature-description text-overflow-fix">{{ feature.description }}</p>
             
             <ul class="feature-benefits">
-              <li v-for="benefit in feature.benefits" :key="benefit">
+              <li v-for="benefit in feature.benefits" :key="benefit" class="text-overflow-fix">
                 <i class="fas fa-check"></i>
-                {{ benefit }}
+                <span>{{ benefit }}</span>
               </li>
             </ul>
             
@@ -65,12 +64,12 @@ export default {
           icon: 'fas fa-brain',
           iconColor: 'icon-cyan',
           badge: 'AI-Powered',
-          title: 'Predictive Memory Analysis',
-          description: 'Machine learning algorithms that anticipate memory usage patterns and prevent bottlenecks before they impact performance.',
+          title: 'Predictive Analysis',
+          description: 'ML algorithms that anticipate memory usage patterns and prevent bottlenecks.',
           benefits: [
             'Real-time anomaly detection',
-            'Predictive capacity planning',
-            'Automated optimization suggestions'
+            'Predictive planning',
+            'Automated optimization'
           ]
         },
         {
@@ -78,12 +77,12 @@ export default {
           icon: 'fas fa-bolt',
           iconColor: 'icon-amber',
           badge: 'Real-Time',
-          title: 'Live Performance Monitoring',
-          description: 'Continuous monitoring of RAM usage across all virtual machines with instant alerts and actionable insights.',
+          title: 'Live Monitoring',
+          description: 'Continuous RAM monitoring with instant alerts and insights.',
           benefits: [
-            'Sub-second latency monitoring',
+            'Sub-second monitoring',
             'Smart alert system',
-            'Historical performance tracking'
+            'Historical tracking'
           ]
         },
         {
@@ -91,24 +90,24 @@ export default {
           icon: 'fas fa-shield-alt',
           iconColor: 'icon-emerald',
           badge: 'Security',
-          title: 'Advanced Threat Detection',
-          description: 'Identify memory-based security threats and vulnerabilities with behavioral analysis and threat intelligence.',
+          title: 'Threat Detection',
+          description: 'Identify memory-based security threats with behavioral analysis.',
           benefits: [
-            'Memory intrusion detection',
-            'Behavioral anomaly analysis',
+            'Intrusion detection',
+            'Anomaly analysis',
             'Compliance reporting'
           ]
         },
         {
           id: 4,
-          icon: 'fas fa-chart-pie',  
+          icon: 'fas fa-chart-pie',
           iconColor: 'icon-cyan',
           badge: 'Analytics',
-          title: 'Intelligent Reporting',
-          description: 'Comprehensive dashboards and customizable reports for deep insights into memory utilization patterns.',
+          title: 'Smart Reporting',
+          description: 'Dashboards and reports for memory utilization insights.',
           benefits: [
             'Custom report builder',
-            'Export to multiple formats',
+            'Multiple export formats',
             'Scheduled reporting'
           ]
         },
@@ -118,7 +117,7 @@ export default {
           iconColor: 'icon-amber',
           badge: 'Automation',
           title: 'Smart Optimization',
-          description: 'Automated memory balancing and resource allocation based on AI-driven recommendations.',
+          description: 'Automated memory balancing with AI recommendations.',
           benefits: [
             'One-click optimization',
             'Custom automation rules',
@@ -127,40 +126,24 @@ export default {
         },
         {
           id: 6,
-          icon: 'fas fa-server',  
+          icon: 'fas fa-server',
           iconColor: 'icon-emerald',
           badge: 'Scalability',
-          title: 'Enterprise Scaling',
-          description: 'Designed to scale from single servers to global data center deployments without performance loss.',
+          title: 'Enterprise Scale',
+          description: 'Scale from single servers to global deployments.',
           benefits: [
             'Multi-tenant architecture',
             'Global deployment ready',
-            'Unlimited scaling capacity'
+            'Unlimited scaling'
           ]
         }
       ],
       stats: [
-        { id: 1, value: '10x', label: 'Faster Analysis' },
-        { id: 2, value: '99.9%', label: 'Uptime SLA' },
-        { id: 3, value: '60%', label: 'Cost Reduction' },
+        { id: 1, value: '10x', label: 'Faster' },
+        { id: 2, value: '99.9%', label: 'Uptime' },
+        { id: 3, value: '60%', label: 'Cost Save' },
         { id: 4, value: '24/7', label: 'Support' }
       ]
-    }
-  },
-  mounted() {
-    this.ensureFontAwesome();
-  },
-  methods: {
-    ensureFontAwesome() {
-      // Check if Font Awesome is loaded, if not, load it dynamically
-      if (!document.querySelector('link[href*="font-awesome"]')) {
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css';
-        link.integrity = 'sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==';
-        link.crossOrigin = 'anonymous';
-        document.head.appendChild(link);
-      }
     }
   }
 }
@@ -173,88 +156,100 @@ export default {
 
 .section-header {
   text-align: center;
-  max-width: 800px;
-  margin: 0 auto 6rem;
+  max-width: 100%;
+  margin: 0 auto 3rem;
+  padding: 0 1rem;
 }
 
 .section-badge {
   display: inline-block;
   background: rgba(0, 245, 212, 0.1);
   color: var(--electric-cyan);
-  padding: 0.5rem 1.5rem;
+  padding: 0.5rem 1.25rem;
   border-radius: 50px;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .section-description {
   color: var(--steel-gray);
-  font-size: 1.25rem;
+  font-size: 1.1rem;
+  line-height: 1.5;
 }
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 2rem;
-  margin-bottom: 6rem;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
 }
 
 .feature-card {
-  padding: 2.5rem;
-  transition: all 0.4s ease;
+  padding: 1.5rem;
+  margin: 0 0.5rem;
 }
 
 .feature-icon-container {
   position: relative;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 .feature-badge {
   position: absolute;
-  top: -10px;
-  right: -10px;
+  top: -8px;
+  right: -8px;
   background: var(--amber-glow);
   color: var(--deep-space);
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 15px;
+  font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
 }
 
 .feature-title {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   color: var(--pure-white);
+  text-align: center;
 }
 
 .feature-description {
   color: var(--steel-gray);
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  text-align: center;
 }
 
 .feature-benefits {
   list-style: none;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .feature-benefits li {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.5rem;
   color: var(--steel-gray);
   margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
 
 .feature-benefits i {
   color: var(--emerald-pulse);
-  font-size: 0.875rem;
-  min-width: 16px; /* Ensure consistent spacing */
+  font-size: 0.8rem;
+  min-width: 16px;
+  margin-top: 0.2rem;
+}
+
+.feature-benefits span {
+  flex: 1;
 }
 
 .feature-link {
@@ -266,11 +261,11 @@ export default {
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
-}
-
-.feature-link:hover {
-  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 0.9rem;
 }
 
 .feature-link i {
@@ -278,24 +273,26 @@ export default {
 }
 
 .feature-link:hover i {
-  transform: translateX(5px);
+  transform: translateX(3px);
 }
 
 .features-stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  padding: 3rem 2rem;
-  text-align: center;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 2rem 1rem;
+  margin: 0 0.5rem;
 }
 
 .stat-item {
-  padding: 1rem;
+  padding: 0.5rem;
+  text-align: center;
 }
 
 .stat-value {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 800;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 .stat-label {
@@ -303,32 +300,57 @@ export default {
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
 }
 
-@media (max-width: 768px) {
+/* Desktop styles */
+@media (min-width: 768px) {
+  .section-header {
+    max-width: 800px;
+    margin: 0 auto 6rem;
+    padding: 0;
+  }
+  
   .features-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 6rem;
   }
   
   .feature-card {
-    padding: 2rem;
+    padding: 2.5rem;
+    margin: 0;
+  }
+  
+  .feature-icon-container {
+    text-align: left;
+    margin-bottom: 1.5rem;
+  }
+  
+  .feature-title {
+    text-align: left;
+    font-size: 1.5rem;
+  }
+  
+  .feature-description {
+    text-align: left;
   }
   
   .features-stats {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    padding: 3rem 2rem;
+    margin: 0;
+  }
+  
+  .stat-value {
+    font-size: 3rem;
   }
 }
 
-/* Ensure Font Awesome icons display properly */
-.feature-benefits .fas {
-  font-family: 'Font Awesome 6 Free' !important;
-  font-weight: 900 !important;
-}
-
-.feature-card .fas {
-  font-family: 'Font Awesome 6 Free' !important;
-  font-weight: 900 !important;
+@media (min-width: 1024px) {
+  .features-grid {
+    gap: 3rem;
+  }
 }
 </style>
