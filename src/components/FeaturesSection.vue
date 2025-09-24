@@ -29,7 +29,7 @@
             
             <ul class="feature-benefits">
               <li v-for="benefit in feature.benefits" :key="benefit">
-                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-check"></i>
                 {{ benefit }}
               </li>
             </ul>
@@ -101,7 +101,7 @@ export default {
         },
         {
           id: 4,
-          icon: 'fas fa-chart-network',
+          icon: 'fas fa-chart-pie',  
           iconColor: 'icon-cyan',
           badge: 'Analytics',
           title: 'Intelligent Reporting',
@@ -127,7 +127,7 @@ export default {
         },
         {
           id: 6,
-          icon: 'fas fa-infinity',
+          icon: 'fas fa-server',  
           iconColor: 'icon-emerald',
           badge: 'Scalability',
           title: 'Enterprise Scaling',
@@ -145,6 +145,22 @@ export default {
         { id: 3, value: '60%', label: 'Cost Reduction' },
         { id: 4, value: '24/7', label: 'Support' }
       ]
+    }
+  },
+  mounted() {
+    this.ensureFontAwesome();
+  },
+  methods: {
+    ensureFontAwesome() {
+      // Check if Font Awesome is loaded, if not, load it dynamically
+      if (!document.querySelector('link[href*="font-awesome"]')) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css';
+        link.integrity = 'sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==';
+        link.crossOrigin = 'anonymous';
+        document.head.appendChild(link);
+      }
     }
   }
 }
@@ -237,6 +253,8 @@ export default {
 
 .feature-benefits i {
   color: var(--emerald-pulse);
+  font-size: 0.875rem;
+  min-width: 16px; /* Ensure consistent spacing */
 }
 
 .feature-link {
@@ -246,10 +264,13 @@ export default {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .feature-link:hover {
-  gap: 0.5rem;
+  gap: 0.75rem;
 }
 
 .feature-link i {
@@ -298,5 +319,16 @@ export default {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
+}
+
+/* Ensure Font Awesome icons display properly */
+.feature-benefits .fas {
+  font-family: 'Font Awesome 6 Free' !important;
+  font-weight: 900 !important;
+}
+
+.feature-card .fas {
+  font-family: 'Font Awesome 6 Free' !important;
+  font-weight: 900 !important;
 }
 </style>
