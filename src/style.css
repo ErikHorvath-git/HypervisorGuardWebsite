@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+:root {
+  /* Professional Color Palette */
+  --deep-space: #0f172a;
+  --space-gray: #1e293b;
+  --electric-cyan: #00f5d4;
+  --neon-blue: #0066ff;
+  --amber-glow: #f59e0b;
+  --emerald-pulse: #10b981;
+  --rose-energy: #f43f5e;
+  --pure-white: #ffffff;
+  --cloud-gray: #f8fafc;
+  --steel-gray: #64748b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, var(--deep-space) 0%, var(--space-gray) 100%);
+  color: var(--pure-white);
+  overflow-x: hidden;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+/* ===== PROFESSIONAL TYPOGRAPHY SCALE ===== */
+.hero-title {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.section-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.body-large {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* ===== PROFESSIONAL COMPONENT STYLES ===== */
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+}
+
+.gradient-text-cyan {
+  background: linear-gradient(135deg, var(--electric-cyan) 0%, var(--neon-blue) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-amber {
+  background: linear-gradient(135deg, var(--amber-glow) 0%, var(--rose-energy) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===== PROFESSIONAL BUTTON SYSTEM ===== */
+.btn-primary {
+  background: linear-gradient(135deg, var(--neon-blue) 0%, var(--electric-cyan) 100%);
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  color: var(--pure-white);
+  font-weight: 600;
+  font-size: 1.125rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.6s;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 102, 255, 0.4);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--electric-cyan);
+  color: var(--electric-cyan);
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.125rem;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--electric-cyan);
+  color: var(--deep-space);
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(0, 245, 212, 0.3);
+}
+
+/* ===== ICON SCALING SYSTEM ===== */
+.icon-xl {
+  font-size: 4rem;
+  padding: 1.5rem;
+}
+
+.icon-lg {
+  font-size: 3rem;
+  padding: 1.25rem;
+}
+
+.icon-md {
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+.icon-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  transition: all 0.4s ease;
+}
+
+.icon-cyan {
+  background: linear-gradient(135deg, rgba(0, 245, 212, 0.1) 0%, rgba(0, 102, 255, 0.1) 100%);
+  color: var(--electric-cyan);
+}
+
+.icon-amber {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(244, 63, 94, 0.1) 100%);
+  color: var(--amber-glow);
+}
+
+.icon-emerald {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(0, 245, 212, 0.1) 100%);
+  color: var(--emerald-pulse);
+}
+
+/* ===== PROFESSIONAL LAYOUT SYSTEM ===== */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-spacing {
+  padding: 8rem 0;
+}
+
+.grid-responsive {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+/* ===== ADVANCED HOVER EFFECTS ===== */
+.hover-3d {
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.hover-3d:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.25),
+    0 0 100px rgba(0, 245, 212, 0.1);
+}
+
+.hover-glow:hover {
+  box-shadow: 
+    0 0 50px rgba(0, 245, 212, 0.3),
+    inset 0 0 50px rgba(0, 245, 212, 0.1);
+}
+
+/* ===== STATS COUNTER ANIMATION ===== */
+.stat-number {
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--electric-cyan) 0%, var(--neon-blue) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===== CUSTOM SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--deep-space);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--electric-cyan) 0%, var(--neon-blue) 100%);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, var(--neon-blue) 0%, var(--electric-cyan) 100%);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .section-spacing {
+    padding: 5rem 0;
+  }
+  
+  .hero-title {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+  }
+  
+  .grid-responsive {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* ===== ANIMATION KEYFRAMES ===== */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
