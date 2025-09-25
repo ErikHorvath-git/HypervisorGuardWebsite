@@ -5,9 +5,9 @@
         <!-- Logo -->
         <div class="logo-group">
           <div class="logo-icon icon-container icon-md icon-cyan hover-glow">
-            <i class="fas fa-server"></i>
+            <i class="fas fa-shield-alt"></i>
           </div>
-          <span class="logo-text gradient-text-cyan">Hypervisor AI</span>
+          <span class="logo-text gradient-text-cyan">AI RAM Analyzer</span>
         </div>
 
         <!-- Navigation -->
@@ -21,12 +21,12 @@
         <!-- CTA -->
         <div class="nav-actions">
           <button class="btn-secondary btn-sm">
-            <i class="fas fa-eye mr-2"></i>
-            View Demo
+            <i class="fas fa-code mr-2"></i>
+            Technical Specs
           </button>
           <button class="btn-primary btn-sm">
-            <i class="fas fa-rocket mr-2"></i>
-            Get Started
+            <i class="fas fa-envelope mr-2"></i>
+            Contact
           </button>
         </div>
 
@@ -41,6 +41,16 @@
         <a v-for="item in navItems" :key="item.id" :href="item.href" class="mobile-nav-link">
           {{ item.text }}
         </a>
+        <div class="mobile-actions">
+          <button class="btn-secondary btn-sm">
+            <i class="fas fa-code mr-2"></i>
+            Technical Specs
+          </button>
+          <button class="btn-primary btn-sm">
+            <i class="fas fa-envelope mr-2"></i>
+            Contact
+          </button>
+        </div>
       </div>
     </nav>
   </header>
@@ -193,6 +203,18 @@ export default {
 .mobile-nav-link:hover {
   color: var(--electric-cyan);
   background: rgba(0, 245, 212, 0.05);
+}
+
+.mobile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+}
+
+.mobile-actions .btn-sm {
+  width: 100%;
+  justify-content: center;
 }
 
 @media (max-width: 968px) {

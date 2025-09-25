@@ -4,34 +4,38 @@
       <div class="hero-content">
         <!-- Main Hero Text -->
         <div class="hero-text">
-          <div class="badge">ENTERPRISE AI PLATFORM</div>
+          <div class="badge">LOCAL AI SECURITY SOLUTION</div>
           <h1 class="hero-title gradient-text-cyan">
-            Hypervisor AI
+            AI RAM Analyzer
           </h1>
           <h2 class="hero-subtitle">
-            Revolutionary <span class="gradient-text-amber">RAM Analysis</span> Platform
+            Real-time <span class="gradient-text-amber">Threat Detection</span> & Response
           </h2>
           <p class="hero-description body-large">
-            AI-powered memory analysis for enterprise virtualization. 
-            Detect, predict, and optimize RAM usage across your entire 
-            hypervisor infrastructure with unprecedented accuracy.
+            Hypervisor-powered memory analysis for critical infrastructure protection. 
+            Detect and block advanced APT threats in real-time with complete data sovereignty 
+            and no cloud dependency.
           </p>
           
           <!-- CTA Buttons -->
           <div class="hero-actions">
             <button class="btn-primary">
               <i class="fas fa-play mr-3"></i>
-              Live Demo
+              View Demo
             </button>
             <button class="btn-secondary">
-              <i class="fas fa-chart-bar mr-3"></i>
-              View Analytics
+              <i class="fas fa-shield-alt mr-3"></i>
+              Technical Specs
             </button>
           </div>
         </div>
         
         <!-- Stats Grid -->
         <div class="hero-stats">
+          <div class="stats-disclaimer">
+            <i class="fas fa-bullseye mr-2"></i>
+            Targeted Performance Benchmarks
+          </div>
           <div v-for="stat in stats" :key="stat.id" class="stat-card glass-morphism hover-3d">
             <div class="stat-icon icon-container icon-lg" :class="stat.iconColor">
               <i :class="stat.icon"></i>
@@ -39,6 +43,7 @@
             <div class="stat-content">
               <div class="stat-number">{{ stat.value }}</div>
               <div class="stat-label">{{ stat.label }}</div>
+              <div class="stat-target">Project Target</div>
               <div class="stat-trend" :class="stat.trendClass">
                 <i :class="stat.trendIcon"></i>
                 {{ stat.trend }}
@@ -61,31 +66,31 @@ export default {
           id: 1,
           icon: 'fas fa-bolt',
           iconColor: 'icon-amber',
-          value: '90%',
-          label: 'Faster Analysis',
-          trend: '+15% efficiency',
-          trendIcon: 'fas fa-arrow-up',
-          trendClass: 'trend-positive'
+          value: '99%',
+          label: 'Detection Rate',
+          trend: 'APT threats',
+          trendIcon: 'fas fa-bullseye',
+          trendClass: 'trend-target'
         },
         {
           id: 2,
           icon: 'fas fa-chart-line',
           iconColor: 'icon-emerald',
-          value: '60%',
-          label: 'Cost Reduction',
-          trend: '$2.3M saved',
-          trendIcon: 'fas fa-dollar-sign',
-          trendClass: 'trend-positive'
+          value: '<1%',
+          label: 'False Positives',
+          trend: 'Target benchmark',
+          trendIcon: 'fas fa-bullseye',
+          trendClass: 'trend-target'
         },
         {
           id: 3,
           icon: 'fas fa-shield-alt',
           iconColor: 'icon-cyan',
-          value: '99.9%',
-          label: 'Prediction Accuracy',
-          trend: 'Industry leading',
-          trendIcon: 'fas fa-trophy',
-          trendClass: 'trend-premium'
+          value: '<500ms',
+          label: 'Response Time',
+          trend: 'Project goal',
+          trendIcon: 'fas fa-bullseye',
+          trendClass: 'trend-target'
         }
       ]
     }
@@ -146,6 +151,20 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  position: relative;
+}
+
+.stats-disclaimer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--amber-glow);
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
 }
 
 .stat-card {
@@ -154,21 +173,39 @@ export default {
   align-items: center;
   gap: 1.5rem;
   transition: all 0.4s ease;
+  position: relative;
 }
 
 .stat-content {
   flex: 1;
 }
 
+.stat-number {
+  position: relative;
+}
+
 .stat-label {
   color: var(--steel-gray);
   font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.stat-target {
+  font-size: 0.75rem;
+  color: var(--amber-glow);
+  font-weight: 600;
   margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .stat-trend {
   font-size: 0.875rem;
   font-weight: 600;
+}
+
+.trend-target {
+  color: var(--amber-glow);
 }
 
 .trend-positive {
@@ -194,6 +231,10 @@ export default {
   .stat-card {
     text-align: left;
   }
+  
+  .stats-disclaimer {
+    text-align: center;
+  }
 }
 
 @media (max-width: 480px) {
@@ -205,6 +246,11 @@ export default {
   .hero-actions button {
     width: 100%;
     max-width: 300px;
+  }
+  
+  .stats-disclaimer {
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
   }
 }
 </style>

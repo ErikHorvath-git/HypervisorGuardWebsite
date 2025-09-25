@@ -3,12 +3,12 @@
     <div class="container">
       <!-- Section Header -->
       <div class="section-header">
-        <div class="section-badge">OUR JOURNEY</div>
+        <div class="section-badge">DEVELOPMENT PHASES</div>
         <h2 class="section-title gradient-text-amber">
-          Product Roadmap
+          Project Roadmap
         </h2>
         <p class="section-description body-large">
-          Our strategic vision for innovation and market leadership in AI-powered memory analysis.
+          Strategic development plan for hypervisor-based APT detection and response system.
         </p>
       </div>
 
@@ -25,7 +25,7 @@
           <div class="phase-content glass-morphism hover-3d">
             <div class="phase-header">
               <span class="phase-badge" :class="phase.status">{{ phase.status }}</span>
-              <span class="phase-date">{{ phase.quarter }} {{ phase.year }}</span>
+              <span class="phase-date">{{ phase.month }}</span>
             </div>
             
             <h3 class="phase-title">{{ phase.title }}</h3>
@@ -58,57 +58,72 @@ export default {
       roadmap: [
         {
           id: 1,
-          quarter: 'Q1',
-          year: '2024',
+          month: 'M0',
           status: 'completed',
-          icon: 'fas fa-seedling',
-          title: 'Platform Foundation',
-          description: 'Core infrastructure and basic AI analysis capabilities with MVP launch.',
-          features: ['Basic RAM Monitoring', 'ML Model Training', 'Dashboard v1.0', 'API Foundation'],
+          icon: 'fas fa-flask',
+          title: 'Proof of Concept',
+          description: 'User-space PoC with mock AI engine and basic pipeline for RAM dump analysis.',
+          features: ['User-space prototype', 'Mock AI detection', 'Basic pipeline', 'Manual testing'],
           progress: 100
         },
         {
           id: 2,
-          quarter: 'Q2',
-          year: '2024',
+          month: 'M1-M2',
           status: 'in-progress',
-          icon: 'fas fa-rocket',
-          title: 'Advanced Analytics',
-          description: 'Enhanced prediction algorithms and real-time processing capabilities.',
-          features: ['Predictive Analytics', 'Real-time Alerts', 'Multi-Cloud Support', 'Advanced Reporting'],
-          progress: 85
+          icon: 'fas fa-shield-alt',
+          title: 'Hypervisor Core',
+          description: 'Stable minimal hypervisor with VMX initialization, VMCS management and EPT mapping.',
+          features: ['VMX on/off', 'VMCS life-cycle', 'EPT identity map', 'MSR/CR trapping'],
+          progress: 60
         },
         {
           id: 3,
-          quarter: 'Q3',
-          year: '2024',
+          month: 'M2-M3',
           status: 'upcoming',
-          icon: 'fas fa-shield-alt',
-          title: 'Enterprise Security',
-          description: 'Advanced security features and compliance certifications.',
-          features: ['SOC 2 Compliance', 'Advanced Encryption', 'Audit Logging', 'Role-Based Access'],
+          icon: 'fas fa-memory',
+          title: 'RAM Acquisition',
+          description: 'Secure memory collection with DMA-safe dumping and process mapping capabilities.',
+          features: ['DMA-safe RAM snapshot', 'CR3 monitoring', 'Process mapping', 'Hidden module detection'],
           progress: 0
         },
         {
           id: 4,
-          quarter: 'Q4',
-          year: '2024',
+          month: 'M3-M4',
           status: 'upcoming',
-          icon: 'fas fa-globe',
-          title: 'Global Expansion',
-          description: 'International deployment and partner ecosystem development.',
-          features: ['Multi-Region Support', 'Partner API', 'Localization', 'Mobile App'],
+          icon: 'fas fa-brain',
+          title: 'AI Detection Engine',
+          description: 'Production AI detector replacing mock engine with advanced threat detection capabilities.',
+          features: ['Feature extraction', 'ML model training', 'YARA rules', 'Heuristic analysis'],
           progress: 0
         },
         {
           id: 5,
-          quarter: 'Q1',
-          year: '2025',
+          month: 'M4-M5',
           status: 'planned',
-          icon: 'fas fa-robot',
-          title: 'AI Evolution',
-          description: 'Next-generation AI capabilities and autonomous optimization.',
-          features: ['Autonomous Healing', 'Predictive Scaling', 'AI Co-pilot', 'Blockchain Integration'],
+          icon: 'fas fa-bolt',
+          title: 'Response & Containment',
+          description: 'Real-time threat response with automated containment and rollback capabilities.',
+          features: ['Thread suspension', 'EPT revocation', 'Syscall blocking', 'Snapshot rollback'],
+          progress: 0
+        },
+        {
+          id: 6,
+          month: 'M5',
+          status: 'planned',
+          icon: 'fas fa-lock',
+          title: 'Hardening & Stealth',
+          description: 'Anti-tamper protection and resilience against bypass techniques.',
+          features: ['VMCS protection', 'Anti-debug measures', 'Integrity checks', 'TPM integration'],
+          progress: 0
+        },
+        {
+          id: 7,
+          month: 'M6',
+          status: 'planned',
+          icon: 'fas fa-rocket',
+          title: 'Pilot Deployment',
+          description: 'Production-ready deployment with partner integration and enterprise features.',
+          features: ['SIEM integration', 'Admin GUI', 'Pilot deployment', 'SLA compliance'],
           progress: 0
         }
       ]

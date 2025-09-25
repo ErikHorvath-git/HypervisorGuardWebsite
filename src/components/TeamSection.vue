@@ -3,13 +3,13 @@
     <div class="container">
       <!-- Section Header -->
       <div class="section-header">
-        <div class="section-badge">MEET THE VISIONARIES</div>
+        <div class="section-badge">OUR TEAM</div>
         <h2 class="section-title gradient-text-emerald">
-          Our Expert Team
+          Core Team & Advisors
         </h2>
         <p class="section-description body-large">
-          Industry veterans and AI pioneers with decades of experience in enterprise 
-          virtualization and machine learning.
+          Passionate cybersecurity experts and AI developers focused on creating 
+          European sovereign security solutions for critical infrastructure.
         </p>
       </div>
 
@@ -45,7 +45,7 @@
 
       <!-- Advisory Board -->
       <div class="advisory-section">
-        <h3 class="advisory-title">Advisory Board</h3>
+        <h3 class="advisory-title">Security Advisors</h3>
         <div class="advisory-grid">
           <div v-for="advisor in advisors" :key="advisor.id" class="advisor-card">
             <div class="advisor-avatar">
@@ -55,6 +55,25 @@
               <h4 class="advisor-name">{{ advisor.name }}</h4>
               <div class="advisor-company">{{ advisor.company }}</div>
               <div class="advisor-role">{{ advisor.role }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hiring Section -->
+      <div class="hiring-section glass-morphism">
+        <h3 class="hiring-title">We're Hiring Key Roles</h3>
+        <div class="hiring-grid">
+          <div v-for="position in hiring" :key="position.id" class="position-card">
+            <div class="position-icon" :style="{ background: position.color }">
+              <i :class="position.icon"></i>
+            </div>
+            <h4 class="position-title">{{ position.title }}</h4>
+            <p class="position-description">{{ position.description }}</p>
+            <div class="position-requirements">
+              <span v-for="req in position.requirements" :key="req" class="requirement-tag">
+                {{ req }}
+              </span>
             </div>
           </div>
         </div>
@@ -71,52 +90,38 @@ export default {
       team: [
         {
           id: 1,
-          name: 'Dr. Sarah Chen',
-          role: 'Chief AI Scientist',
-          bio: 'PhD in Machine Learning from Stanford, former Google AI researcher with 12+ years in predictive analytics and neural networks.',
-          expertise: ['Machine Learning', 'Neural Networks', 'Predictive Analytics', 'TensorFlow'],
+          name: 'Erik Horváth',
+          role: 'Founder & Lead Developer',
+          bio: 'Cybersecurity enthusiast and Applied Informatics student with focus on low-level security solutions, hypervisor technology, and AI-powered threat detection.',
+          expertise: ['C/C++', 'Python', 'Linux', 'Hypervisor Tech', 'AI Security', 'RAM Forensics'],
           avatarColor: 'linear-gradient(135deg, #00f5d4, #0066ff)',
-          avatarIcon: 'fas fa-brain',
+          avatarIcon: 'fas fa-user-secret',
           social: [
             { platform: 'linkedin', icon: 'fab fa-linkedin', url: '#' },
-            { platform: 'twitter', icon: 'fab fa-twitter', url: '#' },
             { platform: 'github', icon: 'fab fa-github', url: '#' }
           ]
         },
         {
           id: 2,
-          name: 'Michael Rodriguez',
-          role: 'Chief Technology Officer',
-          bio: '15 years in enterprise virtualization, VMware certified architect, and cloud infrastructure expert. Led teams at AWS and Microsoft.',
-          expertise: ['Virtualization', 'Cloud Architecture', 'Kubernetes', 'DevOps'],
+          name: 'AI Engineer',
+          role: 'Senior AI/ML Specialist',
+          bio: 'Position to be filled - seeking expert in machine learning for security anomaly detection and behavioral analysis.',
+          expertise: ['Machine Learning', 'Python', 'TensorFlow/PyTorch', 'Security Analytics', 'YARA'],
           avatarColor: 'linear-gradient(135deg, #f59e0b, #f43f5e)',
-          avatarIcon: 'fas fa-code',
+          avatarIcon: 'fas fa-robot',
           social: [
             { platform: 'linkedin', icon: 'fab fa-linkedin', url: '#' },
-            { platform: 'twitter', icon: 'fab fa-twitter', url: '#' }
+            { platform: 'github', icon: 'fab fa-github', url: '#' }
           ]
         },
         {
           id: 3,
-          name: 'Emily Watson',
-          role: 'Chief Product Officer',
-          bio: 'Product management veteran with successful exits in enterprise SaaS. Former Product Lead at Salesforce and Slack.',
-          expertise: ['Product Strategy', 'SaaS', 'Enterprise Sales', 'UX Design'],
+          name: 'Low-Level Programmer',
+          role: 'OS Architecture Expert',
+          bio: 'Position to be filled - seeking developer with deep expertise in kernel development, hypervisors, and low-level system programming.',
+          expertise: ['C/C++', 'Assembly', 'Windows/Linux Kernel', 'VMX/AMD-V', 'Driver Development'],
           avatarColor: 'linear-gradient(135deg, #10b981, #00f5d4)',
-          avatarIcon: 'fas fa-chart-line',
-          social: [
-            { platform: 'linkedin', icon: 'fab fa-linkedin', url: '#' },
-            { platform: 'twitter', icon: 'fab fa-twitter', url: '#' }
-          ]
-        },
-        {
-          id: 4,
-          name: 'David Kim',
-          role: 'Head of Engineering',
-          bio: 'Full-stack architect specializing in real-time data processing and scalable system design. Built systems handling 10M+ concurrent users.',
-          expertise: ['Real-time Systems', 'Microservices', 'Vue.js', 'Apache Flink'],
-          avatarColor: 'linear-gradient(135deg, #0066ff, #8b5cf6)',
-          avatarIcon: 'fas fa-cogs',
+          avatarIcon: 'fas fa-microchip',
           social: [
             { platform: 'linkedin', icon: 'fab fa-linkedin', url: '#' },
             { platform: 'github', icon: 'fab fa-github', url: '#' }
@@ -126,24 +131,36 @@ export default {
       advisors: [
         {
           id: 1,
-          name: 'Dr. James Wilson',
-          company: 'Former CTO, VMware',
-          role: 'Virtualization Expert',
-          icon: 'fas fa-cloud'
+          name: 'Industry Experts',
+          company: 'Cybersecurity Community',
+          role: 'Technical Consultation',
+          icon: 'fas fa-users'
+        }
+      ],
+      hiring: [
+        {
+          id: 1,
+          title: 'AI Engineer (Mid-Senior)',
+          description: 'Develop and optimize ML models for APT detection and behavioral analysis.',
+          requirements: ['Python', 'TensorFlow/PyTorch', 'Security Analytics', 'MLOps'],
+          icon: 'fas fa-brain',
+          color: 'linear-gradient(135deg, #00f5d4, #0066ff)'
         },
         {
           id: 2,
-          name: 'Lisa Thompson',
-          company: 'Partner, Sequoia Capital',
-          role: 'Investment Strategy',
-          icon: 'fas fa-chart-bar'
+          title: 'Low-Level Programmer',
+          description: 'Hypervisor development, kernel modules, and system architecture.',
+          requirements: ['C/C++', 'Assembly', 'VMX/AMD-V', 'Driver Development'],
+          icon: 'fas fa-code',
+          color: 'linear-gradient(135deg, #f59e0b, #f43f5e)'
         },
         {
           id: 3,
-          name: 'Robert Chen',
-          company: 'Ex-Google AI',
-          role: 'AI Research',
-          icon: 'fas fa-robot'
+          title: 'Product Owner',
+          description: 'Lead product strategy and coordinate development with security focus.',
+          requirements: ['Cybersecurity', 'Product Management', 'Critical Infrastructure'],
+          icon: 'fas fa-chart-line',
+          color: 'linear-gradient(135deg, #10b981, #00f5d4)'
         }
       ]
     }
@@ -269,66 +286,139 @@ export default {
 
 .advisory-section {
   text-align: center;
+  margin-bottom: 4rem;
 }
 
 .advisory-title {
-  font-size: 2rem;
+  font-size: 1.5rem; /* Reduced from 2rem */
   font-weight: 600;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem; /* Reduced from 3rem */
   color: var(--pure-white);
 }
 
 .advisory-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  max-width: 800px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Reduced min width */
+  gap: 1rem; /* Reduced from 2rem */
+  max-width: 600px; /* Reduced from 800px */
   margin: 0 auto;
 }
 
 .advisor-card {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 1.5rem;
+  gap: 0.75rem; /* Reduced from 1rem */
+  padding: 1rem; /* Reduced from 1.5rem */
   background: rgba(255, 255, 255, 0.02);
-  border-radius: 15px;
+  border-radius: 12px; /* Slightly smaller radius */
   text-align: left;
+  min-height: auto; /* Remove any fixed height */
 }
 
 .advisor-avatar {
-  width: 60px;
-  height: 60px;
+  width: 50px; /* Reduced from 60px */
+  height: 50px; /* Reduced from 60px */
   background: linear-gradient(135deg, var(--neon-blue), var(--electric-cyan));
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.25rem; /* Reduced from 1.5rem */
   color: white;
   flex-shrink: 0;
 }
 
 .advisor-info {
   flex: 1;
+  min-width: 0; /* Prevent text overflow */
 }
 
 .advisor-name {
   font-weight: 600;
   color: var(--pure-white);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem; /* Reduced spacing */
+  font-size: 0.9rem; /* Slightly smaller text */
+  line-height: 1.2;
 }
 
 .advisor-company {
   color: var(--electric-cyan);
-  font-size: 0.875rem;
+  font-size: 0.75rem; /* Reduced from 0.875rem */
   font-weight: 500;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem; /* Reduced spacing */
+  line-height: 1.2;
 }
 
 .advisor-role {
   color: var(--steel-gray);
+  font-size: 0.7rem; /* Reduced from 0.75rem */
+  line-height: 1.2;
+}
+
+.hiring-section {
+  padding: 3rem;
+  text-align: center;
+}
+
+.hiring-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+  color: var(--pure-white);
+}
+
+.hiring-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.position-card {
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  text-align: center;
+}
+
+.position-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+  margin: 0 auto 1.5rem;
+}
+
+.position-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--pure-white);
+}
+
+.position-description {
+  color: var(--steel-gray);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.position-requirements {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.requirement-tag {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
   font-size: 0.75rem;
+  color: var(--steel-gray);
+  font-weight: 500;
 }
 
 @keyframes rotate {
@@ -344,6 +434,10 @@ export default {
   .advisor-card {
     flex-direction: column;
     text-align: center;
+  }
+  
+  .hiring-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>

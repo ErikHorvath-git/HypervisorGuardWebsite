@@ -3,12 +3,12 @@
     <div class="container">
       <!-- Section Header -->
       <div class="section-header">
-        <div class="section-badge">POWERFUL CAPABILITIES</div>
+        <div class="section-badge">ADVANCED SECURITY CAPABILITIES</div>
         <h2 class="section-title gradient-text-cyan">
-          Enterprise Features
+          Core Features
         </h2>
         <p class="section-description body-large text-overflow-fix">
-          AI-powered memory management for hypervisor infrastructure at scale.
+          Hypervisor-powered RAM analysis for real-time APT threat detection and response.
         </p>
       </div>
 
@@ -64,12 +64,12 @@ export default {
           icon: 'fas fa-brain',
           iconColor: 'icon-cyan',
           badge: 'AI-Powered',
-          title: 'Predictive Analysis',
-          description: 'ML algorithms that anticipate memory usage patterns and prevent bottlenecks.',
+          title: 'APT Threat Detection',
+          description: 'Advanced AI algorithms detect sophisticated APT techniques in real-time memory analysis.',
           benefits: [
-            'Real-time anomaly detection',
-            'Predictive planning',
-            'Automated optimization'
+            'Behavioral anomaly detection',
+            'Zero-day threat identification',
+            'Advanced pattern recognition'
           ]
         },
         {
@@ -77,38 +77,38 @@ export default {
           icon: 'fas fa-bolt',
           iconColor: 'icon-amber',
           badge: 'Real-Time',
-          title: 'Live Monitoring',
-          description: 'Continuous RAM monitoring with instant alerts and insights.',
+          title: 'Hypervisor Monitoring',
+          description: 'Continuous ring-0 level RAM monitoring with immediate threat response capabilities.',
           benefits: [
-            'Sub-second monitoring',
-            'Smart alert system',
-            'Historical tracking'
+            'VMX/VMCS management',
+            'EPT-based memory access',
+            'Instant containment actions'
           ]
         },
         {
           id: 3,
           icon: 'fas fa-shield-alt',
           iconColor: 'icon-emerald',
-          badge: 'Security',
-          title: 'Threat Detection',
-          description: 'Identify memory-based security threats with behavioral analysis.',
+          badge: 'Local Security',
+          title: 'Data Sovereignty',
+          description: 'Complete local deployment ensuring no cloud dependency or data sharing risks.',
           benefits: [
-            'Intrusion detection',
-            'Anomaly analysis',
-            'Compliance reporting'
+            'GDPR/NIS2 compliance',
+            'No external data transfer',
+            'Full control over sensitive data'
           ]
         },
         {
           id: 4,
           icon: 'fas fa-chart-pie',
           iconColor: 'icon-cyan',
-          badge: 'Analytics',
-          title: 'Smart Reporting',
-          description: 'Dashboards and reports for memory utilization insights.',
+          badge: 'Forensic',
+          title: 'RAM Forensics',
+          description: 'Deep memory analysis for uncovering hidden processes and sophisticated attacks.',
           benefits: [
-            'Custom report builder',
-            'Multiple export formats',
-            'Scheduled reporting'
+            'Process hollowing detection',
+            'Unlinked DLL identification',
+            'RWX page monitoring'
           ]
         },
         {
@@ -116,33 +116,33 @@ export default {
           icon: 'fas fa-robot',
           iconColor: 'icon-amber',
           badge: 'Automation',
-          title: 'Smart Optimization',
-          description: 'Automated memory balancing with AI recommendations.',
+          title: 'Auto-Containment',
+          description: 'Automated response actions to isolate threats without service interruption.',
           benefits: [
-            'One-click optimization',
-            'Custom automation rules',
-            'Performance forecasting'
+            'Thread suspension',
+            'EPT access revocation',
+            'System call blocking'
           ]
         },
         {
           id: 6,
           icon: 'fas fa-server',
           iconColor: 'icon-emerald',
-          badge: 'Scalability',
-          title: 'Enterprise Scale',
-          description: 'Scale from single servers to global deployments.',
+          badge: 'Critical Infrastructure',
+          title: 'Enterprise Protection',
+          description: 'Designed specifically for critical infrastructure with high availability requirements.',
           benefits: [
-            'Multi-tenant architecture',
-            'Global deployment ready',
-            'Unlimited scaling'
+            '99.5% uptime guarantee',
+            'Critical infrastructure focus',
+            'EU regulatory alignment'
           ]
         }
       ],
       stats: [
-        { id: 1, value: '10x', label: 'Faster' },
-        { id: 2, value: '99.9%', label: 'Uptime' },
-        { id: 3, value: '60%', label: 'Cost Save' },
-        { id: 4, value: '24/7', label: 'Support' }
+        { id: 1, value: '99%', label: 'Detection Rate' },
+        { id: 2, value: '<1%', label: 'False Positives' },
+        { id: 3, value: '<500ms', label: 'Response Time' },
+        { id: 4, value: '0%', label: 'Cloud Risk' }
       ]
     }
   }

@@ -5,20 +5,20 @@
       <div class="container">
         <div class="cta-content">
           <h2 class="cta-title gradient-text-cyan">
-            Ready to Transform Your Infrastructure?
+            Ready to Secure Critical Infrastructure?
           </h2>
           <p class="cta-description">
-            Join leading enterprises that trust Hypervisor AI for their memory management needs. 
-            Schedule a personalized demo today.
+            Join the movement for European digital sovereignty. Contact us for technical collaboration, 
+            pilot deployments, or investment in next-generation APT protection.
           </p>
           <div class="cta-actions">
             <button class="btn-primary btn-xl">
-              <i class="fas fa-calendar-check mr-3"></i>
-              Schedule Demo
+              <i class="fas fa-shield-alt mr-3"></i>
+              Technical Demo
             </button>
             <button class="btn-secondary btn-xl">
-              <i class="fas fa-file-download mr-3"></i>
-              Investor Deck
+              <i class="fas fa-file-contract mr-3"></i>
+              Project Proposal
             </button>
           </div>
         </div>
@@ -29,17 +29,17 @@
     <div class="footer-main">
       <div class="container">
         <div class="footer-content">
-          <!-- Company Info -->
+          <!-- Project Info -->
           <div class="footer-section">
             <div class="footer-logo">
               <div class="logo-icon icon-container icon-md icon-cyan">
-                <i class="fas fa-server"></i>
+                <i class="fas fa-shield-alt"></i>
               </div>
-              <span class="logo-text gradient-text-cyan">Hypervisor AI</span>
+              <span class="logo-text gradient-text-cyan">AI RAM Analyzer</span>
             </div>
             <p class="company-description">
-              Leading the revolution in AI-powered memory analysis for enterprise 
-              virtualization infrastructure. Trusted by Fortune 500 companies worldwide.
+              European sovereign security solution for critical infrastructure protection. 
+              Hypervisor-powered APT detection with complete data sovereignty and zero cloud dependency.
             </p>
             <div class="social-links">
               <a v-for="social in socialLinks" :key="social.name" :href="social.url" class="social-link">
@@ -48,11 +48,11 @@
             </div>
           </div>
 
-          <!-- Product Links -->
+          <!-- Technology Links -->
           <div class="footer-section">
-            <h3 class="footer-title">Product</h3>
+            <h3 class="footer-title">Technology</h3>
             <ul class="footer-links">
-              <li v-for="link in productLinks" :key="link.name">
+              <li v-for="link in technologyLinks" :key="link.name">
                 <a :href="link.url" class="footer-link">
                   <i class="fas fa-chevron-right"></i>
                   {{ link.name }}
@@ -61,11 +61,11 @@
             </ul>
           </div>
 
-          <!-- Company Links -->
+          <!-- Project Links -->
           <div class="footer-section">
-            <h3 class="footer-title">Company</h3>
+            <h3 class="footer-title">Project</h3>
             <ul class="footer-links">
-              <li v-for="link in companyLinks" :key="link.name">
+              <li v-for="link in projectLinks" :key="link.name">
                 <a :href="link.url" class="footer-link">
                   <i class="fas fa-chevron-right"></i>
                   {{ link.name }}
@@ -90,17 +90,17 @@
             </div>
           </div>
 
-          <!-- Newsletter -->
+          <!-- EU Initiatives -->
           <div class="footer-section">
-            <h3 class="footer-title">Stay Updated</h3>
+            <h3 class="footer-title">EU Initiatives</h3>
             <p class="newsletter-description">
-              Get the latest product updates and industry insights delivered to your inbox.
+              Aligned with European digital sovereignty and critical infrastructure protection strategies.
             </p>
-            <div class="newsletter-form">
-              <input type="email" placeholder="Enter your email" class="newsletter-input">
-              <button class="newsletter-btn">
-                <i class="fas fa-paper-plane"></i>
-              </button>
+            <div class="initiatives-list">
+              <div v-for="initiative in initiatives" :key="initiative" class="initiative-tag">
+                <i class="fas fa-check"></i>
+                {{ initiative }}
+              </div>
             </div>
           </div>
         </div>
@@ -112,7 +112,7 @@
       <div class="container">
         <div class="footer-bottom-content">
           <div class="copyright">
-            &copy; 2024 Hypervisor AI. All rights reserved.
+            &copy; 2024 AI RAM Analyzer & Response Handler. European sovereign security solution.
           </div>
           <div class="footer-legal">
             <a v-for="link in legalLinks" :key="link.name" :href="link.url" class="legal-link">
@@ -134,36 +134,39 @@ export default {
   data() {
     return {
       socialLinks: [
-        { name: 'Twitter', icon: 'fab fa-twitter', url: '#' },
-        { name: 'LinkedIn', icon: 'fab fa-linkedin', url: '#' },
         { name: 'GitHub', icon: 'fab fa-github', url: '#' },
-        { name: 'YouTube', icon: 'fab fa-youtube', url: '#' },
-        { name: 'Discord', icon: 'fab fa-discord', url: '#' }
+        { name: 'LinkedIn', icon: 'fab fa-linkedin', url: '#' },
+        { name: 'Email', icon: 'fas fa-envelope', url: 'mailto:mailnavsetko206@gmail.com' }
       ],
-      productLinks: [
-        { name: 'Features', url: '#features' },
-        { name: 'Technology', url: '#tech' },
-        { name: 'Pricing', url: '#' },
-        { name: 'Documentation', url: '#' },
-        { name: 'API Reference', url: '#' }
+      technologyLinks: [
+        { name: 'Hypervisor Core', url: '#tech' },
+        { name: 'AI Detection', url: '#tech' },
+        { name: 'RAM Forensics', url: '#features' },
+        { name: 'Response Engine', url: '#features' },
+        { name: 'Architecture', url: '#tech' }
       ],
-      companyLinks: [
-        { name: 'About Us', url: '#team' },
-        { name: 'Careers', url: '#' },
-        { name: 'Press Kit', url: '#' },
+      projectLinks: [
+        { name: 'Roadmap', url: '#roadmap' },
+        { name: 'Team', url: '#team' },
         { name: 'Contact', url: '#contact' },
-        { name: 'Investors', url: '#' }
+        { name: 'Open Source', url: '#' },
+        { name: 'Documentation', url: '#' }
       ],
       contactInfo: [
-        { type: 'Email', icon: 'fas fa-envelope', value: 'hello@hypervisor-ai.com' },
-        { type: 'Phone', icon: 'fas fa-phone', value: '+1 (555) 123-4567' },
-        { type: 'Address', icon: 'fas fa-map-marker-alt', value: 'San Francisco, CA' }
+        { type: 'Technical Lead', icon: 'fas fa-user-secret', value: 'Erik Horváth' },
+        { type: 'Email', icon: 'fas fa-envelope', value: 'mailnavsetko206@gmail.com' },
+        { type: 'Location', icon: 'fas fa-map-marker-alt', value: 'Nitra, Slovakia (EU)' }
+      ],
+      initiatives: [
+        'NIS2 Directive',
+        'GDPR Compliance', 
+        'Digital Sovereignty',
+        'Gaia-X Initiative'
       ],
       legalLinks: [
         { name: 'Privacy Policy', url: '#' },
         { name: 'Terms of Service', url: '#' },
-        { name: 'Cookie Policy', url: '#' },
-        { name: 'Security', url: '#' }
+        { name: 'Open Source License', url: '#' }
       ]
     }
   }
@@ -349,41 +352,23 @@ export default {
   line-height: 1.5;
 }
 
-.newsletter-form {
+.initiatives-list {
   display: flex;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 50px;
-  overflow: hidden;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
-.newsletter-input {
-  flex: 1;
-  background: none;
-  border: none;
-  padding: 1rem 1.5rem;
-  color: var(--pure-white);
+.initiative-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--steel-gray);
   font-size: 0.875rem;
 }
 
-.newsletter-input::placeholder {
-  color: var(--steel-gray);
-}
-
-.newsletter-input:focus {
-  outline: none;
-}
-
-.newsletter-btn {
-  background: var(--electric-cyan);
-  border: none;
-  padding: 1rem 1.5rem;
-  color: var(--deep-space);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.newsletter-btn:hover {
-  background: var(--neon-blue);
+.initiative-tag i {
+  color: var(--emerald-pulse);
+  font-size: 0.75rem;
 }
 
 .footer-bottom {

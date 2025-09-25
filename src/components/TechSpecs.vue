@@ -3,21 +3,21 @@
     <div class="container">
       <!-- Section Header -->
       <div class="section-header">
-        <div class="section-badge">TECHNICAL EXCELLENCE</div>
+        <div class="section-badge">HYPERVISOR TECHNOLOGY</div>
         <h2 class="section-title gradient-text-cyan">
-          Advanced Technology Stack
+          Security Architecture
         </h2>
         <p class="section-description body-large">
-          Built on cutting-edge technologies for unparalleled performance, 
-          scalability, and security in memory analysis.
+          Low-level hypervisor-based RAM analysis for real-time APT threat detection 
+          and response with complete data sovereignty.
         </p>
       </div>
 
       <!-- Architecture Overview -->
       <div class="architecture-overview glass-morphism">
         <div class="architecture-header">
-          <h3 class="architecture-title">System Architecture</h3>
-          <p class="architecture-subtitle">Real-time data processing pipeline designed for enterprise scale</p>
+          <h3 class="architecture-title">Hypervisor Security Layers</h3>
+          <p class="architecture-subtitle">Ring-0 level protection designed for critical infrastructure</p>
         </div>
         
         <div class="architecture-layers">
@@ -57,38 +57,38 @@
 
       <!-- Technology Stack -->
       <div class="tech-stack-grid">
-        <div v-for="category in techStack" :key="category.id" class="tech-category">
-          <div class="category-header">
-            <div class="category-icon icon-container icon-lg" :class="category.iconColor">
-              <i :class="category.icon"></i>
-            </div>
-            <h3 class="category-title">{{ category.name }}</h3>
+  <div v-for="category in techStack" :key="category.id" class="tech-category">
+    <div class="category-header">
+      <div class="category-icon icon-container icon-lg" :class="category.iconColor">
+        <i :class="category.icon"></i>
+      </div>
+      <h3 class="category-title">{{ category.name }}</h3>
+    </div>
+    
+    <div class="technologies-list">
+      <div v-for="tech in category.technologies" :key="tech.name" class="tech-item">
+        <div class="tech-logo">
+          <i :class="tech.icon"></i>
+        </div>
+        <div class="tech-info">
+          <div class="tech-name">{{ tech.name }}</div>
+          <div class="tech-purpose">{{ tech.purpose }}</div>
+        </div>
+        <div class="tech-rating">
+          <div class="rating-stars">
+            <i v-for="star in 5" :key="star" 
+               :class="star <= tech.rating ? 'fas fa-star' : 'far fa-star'"></i>
           </div>
-          
-          <div class="technologies-list">
-            <div v-for="tech in category.technologies" :key="tech.name" class="tech-item">
-              <div class="tech-logo">
-                <i :class="tech.icon"></i>
-              </div>
-              <div class="tech-info">
-                <div class="tech-name">{{ tech.name }}</div>
-                <div class="tech-purpose">{{ tech.purpose }}</div>
-              </div>
-              <div class="tech-rating">
-                <div class="rating-stars">
-                  <i v-for="star in 5" :key="star" 
-                     :class="star <= tech.rating ? 'fas fa-star' : 'far fa-star'"></i>
-                </div>
-                <div class="rating-text">{{ tech.rating }}/5</div>
-              </div>
-            </div>
-          </div>
+          <div class="rating-text">{{ tech.rating }}/5</div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
 
       <!-- Performance Metrics -->
       <div class="performance-section">
-        <h3 class="performance-title">Enterprise Performance Metrics</h3>
+        <h3 class="performance-title">Security Performance Metrics</h3>
         <div class="metrics-grid">
           <div v-for="metric in performanceMetrics" :key="metric.id" class="metric-card glass-morphism hover-3d">
             <div class="metric-icon" :style="{ background: metric.color }">
@@ -117,143 +117,143 @@ export default {
       architecture: [
         {
           id: 1,
-          name: 'Data Ingestion Layer',
-          technology: 'Apache Kafka + Custom Agents',
-          icon: 'fas fa-database',
-          status: 'production',
-          description: 'High-throughput data collection from hypervisors with real-time streaming capabilities.',
+          name: 'Hypervisor Core',
+          technology: 'VMX/VMCS + EPT Management',
+          icon: 'fas fa-shield-alt',
+          status: 'development',
+          description: 'Ring-0 hypervisor with VMX initialization, VMCS management and EPT mapping for secure memory access.',
           features: [
-            '10M+ events/second',
-            'Sub-10ms latency',
-            '99.99% uptime SLA',
-            'End-to-end encryption'
+            'VMX root/non-root operation',
+            'EPT identity mapping',
+            'MSR/CR register trapping',
+            'System call monitoring'
           ],
-          performance: { value: '2.3TB/hr', label: 'Data Processing', percentage: 100 }
+          performance: { value: '<3%', label: 'CPU Overhead', percentage: 97 }
         },
         {
           id: 2,
-          name: 'AI Processing Engine',
-          technology: 'TensorFlow + PyTorch',
-          icon: 'fas fa-brain',
-          status: 'production',
-          description: 'Advanced machine learning models for predictive analysis and anomaly detection.',
+          name: 'RAM Acquisition',
+          technology: 'DMA-safe Memory Dumping',
+          icon: 'fas fa-memory',
+          status: 'development',
+          description: 'Secure memory snapshot collection outside user space with process mapping and hidden module detection.',
           features: [
-            'Real-time inference',
-            'Auto-scaling ML models',
-            'A/B testing framework',
-            'Model versioning'
+            'CR3 monitoring',
+            'Process mapping',
+            'Hidden module detection',
+            '<5s snapshot time'
           ],
-          performance: { value: '94%', label: 'Accuracy', percentage: 94 }
+          performance: { value: '99%', label: 'Memory Coverage', percentage: 99 }
         },
         {
           id: 3,
-          name: 'Analytics Dashboard',
-          technology: 'Vue.js + D3.js',
-          icon: 'fas fa-chart-bar',
-          status: 'production',
-          description: 'Interactive visualization platform with real-time data streaming and custom reporting.',
+          name: 'AI Detection Engine',
+          technology: 'Machine Learning + YARA',
+          icon: 'fas fa-brain',
+          status: 'prototype',
+          description: 'AI-powered threat detection combining behavioral analysis with signature-based YARA rules.',
           features: [
-            '60fps animations',
-            'Real-time updates',
-            'Export capabilities',
-            'Mobile responsive'
+            'EPT anomaly detection',
+            'Process hollowing identification',
+            'Unlinked DLL detection',
+            'RWX page monitoring'
           ],
-          performance: { value: '<100ms', label: 'Response Time', percentage: 100 }
+          performance: { value: '95%', label: 'Detection Rate', percentage: 95 }
         },
         {
           id: 4,
-          name: 'Cloud Infrastructure',
-          technology: 'Kubernetes + Docker',
-          icon: 'fas fa-cloud',
-          status: 'beta',
-          description: 'Containerized microservices architecture with auto-scaling and multi-region deployment.',
+          name: 'Response Handler',
+          technology: 'Auto-Containment System',
+          icon: 'fas fa-bolt',
+          status: 'planned',
+          description: 'Real-time threat response with thread suspension, EPT revocation and system call blocking.',
           features: [
-            'Multi-cloud ready',
-            'Zero-downtime deployments',
-            'Cost optimization',
-            'Disaster recovery'
+            'Thread suspension',
+            'EPT access revocation',
+            'Syscall blocking',
+            'Snapshot rollback'
           ],
-          performance: { value: '99.95%', label: 'Availability', percentage: 99.95 }
+          performance: { value: '<500ms', label: 'Response Time', percentage: 100 }
         }
       ],
       techStack: [
-        {
-          id: 1,
-          name: 'AI & Machine Learning',
-          icon: 'fas fa-robot',
-          iconColor: 'icon-cyan',
-          technologies: [
-            { name: 'TensorFlow', icon: 'fas fa-project-diagram', purpose: 'Neural Networks', rating: 5 },
-            { name: 'PyTorch', icon: 'fas fa-fire', purpose: 'Research Models', rating: 4 },
-            { name: 'Scikit-learn', icon: 'fas fa-cogs', purpose: 'Classical ML', rating: 4 },
-            { name: 'XGBoost', icon: 'fas fa-chart-line', purpose: 'Gradient Boosting', rating: 5 }
-          ]
-        },
-        {
-          id: 2,
-          name: 'Data Processing',
-          icon: 'fas fa-server',
-          iconColor: 'icon-amber',
-          technologies: [
-            { name: 'Apache Kafka', icon: 'fas fa-stream', purpose: 'Event Streaming', rating: 5 },
-            { name: 'Apache Flink', icon: 'fas fa-bolt', purpose: 'Stream Processing', rating: 5 },
-            { name: 'Redis', icon: 'fas fa-memory', purpose: 'Caching', rating: 4 },
-            { name: 'Elasticsearch', icon: 'fas fa-search', purpose: 'Search & Analytics', rating: 4 }
-          ]
-        },
-        {
-          id: 3,
-          name: 'Frontend & UX',
-          icon: 'fas fa-desktop',
-          iconColor: 'icon-emerald',
-          technologies: [
-            { name: 'Vue.js 3', icon: 'fab fa-vuejs', purpose: 'Framework', rating: 5 },
-            { name: 'D3.js', icon: 'fas fa-chart-pie', purpose: 'Data Visualization', rating: 5 },
-            { name: 'WebGL', icon: 'fas fa-cube', purpose: '3D Graphics', rating: 4 },
-            { name: 'WebSocket', icon: 'fas fa-plug', purpose: 'Real-time Comms', rating: 5 }
-          ]
-        }
-      ],
+  {
+    id: 1,
+    name: 'Low-Level Programming',
+    icon: 'fas fa-microchip',
+    iconColor: 'icon-cyan',
+    technologies: [
+      { name: 'C/C++', icon: 'fas fa-cogs', purpose: 'Kernel Development', rating: 5 },
+      { name: 'Assembly', icon: 'fas fa-code', purpose: 'Hardware Interaction', rating: 4 },
+      { name: 'Windows Driver Kit', icon: 'fab fa-windows', purpose: 'Driver Development', rating: 4 },
+      { name: 'Linux Kernel API', icon: 'fab fa-linux', purpose: 'Kernel Modules', rating: 5 }
+    ]
+  },
+  {
+    id: 2,
+    name: 'Security & Forensics',
+    icon: 'fas fa-user-secret',
+    iconColor: 'icon-amber',
+    technologies: [
+      { name: 'YARA', icon: 'fas fa-search', purpose: 'Pattern Matching', rating: 5 },
+      { name: 'Volatility', icon: 'fas fa-search-plus', purpose: 'Memory Analysis', rating: 5 },
+      { name: 'Python', icon: 'fab fa-python', purpose: 'Analysis Scripts', rating: 4 },
+      { name: 'Custom ML Models', icon: 'fas fa-robot', purpose: 'Anomaly Detection', rating: 4 }
+    ]
+  },
+  {
+    id: 3,
+    name: 'Virtualization',
+    icon: 'fas fa-server',
+    iconColor: 'icon-emerald',
+    technologies: [
+      { name: 'Intel VMX', icon: 'fas fa-cube', purpose: 'Hardware Virtualization', rating: 5 },
+      { name: 'AMD-V', icon: 'fas fa-cube', purpose: 'AMD Virtualization', rating: 5 },
+      { name: 'Extended Page Tables', icon: 'fas fa-table', purpose: 'Memory Management', rating: 4 },
+      { name: 'VMCS', icon: 'fas fa-database', purpose: 'VM Control Structure', rating: 5 }
+    ]
+  }
+],
       performanceMetrics: [
         {
           id: 1,
-          value: '10M+',
-          label: 'Events Processed/Second',
-          icon: 'fas fa-bolt',
+          value: '99%',
+          label: 'APT Detection Rate',
+          icon: 'fas fa-bullseye',
           color: 'linear-gradient(135deg, #00f5d4, #0066ff)',
           trend: 'positive',
           trendIcon: 'fas fa-arrow-up',
-          trendText: '15% increase'
+          trendText: 'Industry leading'
         },
         {
           id: 2,
-          value: '<50ms',
-          label: 'P95 Response Time',
-          icon: 'fas fa-tachometer-alt',
+          value: '<1%',
+          label: 'False Positive Rate',
+          icon: 'fas fa-times-circle',
           color: 'linear-gradient(135deg, #f59e0b, #f43f5e)',
           trend: 'positive',
           trendIcon: 'fas fa-arrow-down',
-          trendText: '20% faster'
+          trendText: 'Minimal false alerts'
         },
         {
           id: 3,
-          value: '99.99%',
-          label: 'Uptime SLA',
-          icon: 'fas fa-shield-alt',
+          value: '<500ms',
+          label: 'Threat Response Time',
+          icon: 'fas fa-tachometer-alt',
           color: 'linear-gradient(135deg, #10b981, #00f5d4)',
           trend: 'stable',
-          trendIcon: 'fas fa-minus',
-          trendText: 'Zero downtime'
+          trendIcon: 'fas fa-bolt',
+          trendText: 'Real-time blocking'
         },
         {
           id: 4,
-          value: 'PB/Day',
-          label: 'Data Capacity',
-          icon: 'fas fa-database',
+          value: '0%',
+          label: 'Cloud Dependency',
+          icon: 'fas fa-cloud-slash',
           color: 'linear-gradient(135deg, #8b5cf6, #0066ff)',
           trend: 'positive',
-          trendIcon: 'fas fa-arrow-up',
-          trendText: 'Scalable to exabytes'
+          trendIcon: 'fas fa-check',
+          trendText: 'Complete sovereignty'
         }
       ]
     }
@@ -357,6 +357,21 @@ export default {
 }
 
 .layer-badge.beta {
+  background: rgba(245, 158, 11, 0.2);
+  color: var(--amber-glow);
+}
+
+.layer-badge.development {
+  background: rgba(59, 130, 246, 0.2);
+  color: var(--neon-blue);
+}
+
+.layer-badge.planned {
+  background: rgba(139, 92, 246, 0.2);
+  color: #8b5cf6;
+}
+
+.layer-badge.prototype {
   background: rgba(245, 158, 11, 0.2);
   color: var(--amber-glow);
 }
